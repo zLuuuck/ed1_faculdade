@@ -11,8 +11,8 @@ document.querySelector(".fa-eye").addEventListener("click", function() {
 
 // Função de login
 async function login() {
-    const usernameInput = document.querySelector("#userInput").value.trim();
-    const passwordInput = document.querySelector("#senhaInput").value;
+    const usernameInput = document.querySelector("#userInput").value();
+    const passwordInput = document.querySelector("#senhaInput").value();
 
 
     if (!usernameInput || !passwordInput) {
@@ -42,7 +42,7 @@ async function login() {
         localStorage.setItem("token", token);
         localStorage.setItem("userLogado", JSON.stringify({
             nome: usuarioEncontrado.nome,
-            email: usuarioEncontrado.email
+            email: usuarioEncontrado.senha
         }));
 
         showSuccess("Login realizado com sucesso!");
